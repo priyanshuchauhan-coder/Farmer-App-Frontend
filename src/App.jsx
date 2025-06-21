@@ -1,65 +1,59 @@
 
-import './App.css'
+
+// import { BrowserRouter as Router } from 'react-router-dom';
+// import { AuthProvider } from './context/AuthContext';
+// import { AlertProvider } from './context/AlertContext';
+// import Footer from "./components/Footer"
+// import Navbar from "./components/Navbar"
+// import Alert from "./components/Alert";
+// import AppRoutes from './AppRoutes';
+// import './App.css'
+
+// function App() {
+//   return (
+//     <Router>
+//       <AlertProvider>
+//         <AuthProvider>
+//         <div className="FarmEzy">
+//         <Alert message="this is amazing react"/>
+//           <Navbar/>
+//           <AppRoutes />
+//           <Footer/>
+//           </div>
+//         </AuthProvider>
+//       </AlertProvider>
+//     </Router>
+//   );
+// }
+
+// export default App;
 
 
-
-import "./App.css";
-// react-roter-dom setup
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { AlertProvider } from './context/AlertContext';
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
 import Alert from "./components/Alert";
-import NoMatch from "./components/NoMatch";
-import Verify from "./components/Verify";
-import ResetPassword from "./components/ResetPassword";
-import ForgotPassword from "./components/ForgotPassword";
-import ResendEmail from "./components/ResendEmail";
-
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import AlertState from "./context/alert/AlertState";
-import AuthState from "./context/auth/AuthState";
-import User from "./components/User";
-
+import AppRoutes from './AppRoutes';
+import './App.css';
 
 function App() {
-
-  
-
-  
   return (
-    <>
-    <AlertState>
-    <AuthState>
-    
     <Router>
-      {
-        /* All routes are nested inside it */
-        <>
-        <Navbar/>
-        <Alert message="this is amazing react"/>
-        <div className="container">
-        <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/verify/:slug" element={<Verify/>} />
-        <Route path="/forgot_password" element={<ForgotPassword/>} />
-        <Route path="/reset_password/:slug" element={<ResetPassword/>} />
-        <Route path="/resend_email" element={<ResendEmail/>} />
-        <Route path="/user" element={<User/>} />
-        <Route path="*" element={<NoMatch />} />
-        </Routes>
-        </div>
-        </>
-      }
+      <AlertProvider>
+        <AuthProvider>
+          <div className="FarmEzy d-flex flex-column min-vh-100">
+            <Alert />
+            <Navbar />
+            <main className="flex-grow-1">
+              <AppRoutes />
+            </main>
+            <Footer />
+          </div>
+        </AuthProvider>
+      </AlertProvider>
     </Router>
-   
-    </AuthState>
-    </AlertState>
-    </>
   );
 }
 

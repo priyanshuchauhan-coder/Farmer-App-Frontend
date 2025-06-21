@@ -1,15 +1,27 @@
 import React from "react";
+import Hero from "./Hero";
+import Intro from "./Intro";
+import Platform from "./Platform";
+import Working from "./Working";
+import Testimonials from "./Testimonials";
+import Call from "./Call";
 
 
 
 
-function Home(props) {
+function Home() {
   
   return (
-   <div>
-  
-       
-      </div> 
+    
+  <>
+  <Hero/>
+  <Intro/>
+  <Platform/>
+  <Working/>
+  <Testimonials/>
+  <Call/>
+
+  </>
   );
 }
 
