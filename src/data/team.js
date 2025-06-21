@@ -1,5 +1,5 @@
 import prabhat from '../assets/profile/prabhat.jpg'
-import rinku from '../assets/profile/rinkukuntal.jpg'
+import rinku from '../assets/profile/rinkuKuntal.jpg'
 import satyam from '../assets/profile/satyam.jpg'
 import priyanshu from '../assets/profile/priyanshu.jpg'
 
